@@ -16,7 +16,7 @@ var VideoListView = Backbone.View.extend({
     //this.videos.models.forEach(function(video) {
     //colleciton passed in as a new porperty called 'collection'  so this.collection.forEach
     this.collection.forEach((video) => {
-      var videoEntry = new VideoListEntryView(video);
+      var videoEntry = new VideoListEntryView({model: video});
       this.$el.find('.video-list').append(videoEntry.$el);
       //for each model in the collection
         //create new viewListEntryView passing the model
