@@ -2,10 +2,10 @@ var VideoListView = Backbone.View.extend({
   el: '.list',
   
   initialize: function() {
-    //should initialize AFTER a search has been responded to by youTube
     //pass first video in search return to init for video player
     this.render();
-    //collection: this.videos;
+    this.collection.on('sync', this.render, this);
+
     //setup on change listener to re-render if collection changes
   },
 
